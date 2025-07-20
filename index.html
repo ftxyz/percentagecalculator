@@ -1,231 +1,216 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free Online Percentage Calculator - Support multiple languages. 免费在线百分比计算器 - 支持多种语言。">
-    <meta name="keywords" content="percentage calculator,百分比计算器,calculadora de porcentajes,パーセント計算機,퍼센트 계산기">
-    <title>Percentage Calculator - 百分比计算器 - Multi-Language Support</title>
+    <meta name="description" content="Free Online Percentage Calculator - Calculate percentages, proportions, growth rates and more. Easy-to-use online percentage calculation tool.">
+    <meta name="keywords" content="percentage calculator,online percentage calculator,calculate percentage,percentage tool,proportion calculator,growth rate calculator">
+    <title>Percentage Calculator - Free Online Percentage, Proportion & Growth Rate Calculator</title>
+    <link rel="stylesheet" href="style.css">
     
     <!-- Hreflang tags for SEO -->
     <link rel="alternate" hreflang="x-default" href="./index.html" />
-    <link rel="alternate" hreflang="en" href="./en/index.html" />
     <link rel="alternate" hreflang="zh" href="./zh/index.html" />
     <link rel="alternate" hreflang="es" href="./es/index.html" />
     <link rel="alternate" hreflang="ja" href="./ja/index.html" />
     <link rel="alternate" hreflang="ko" href="./ko/index.html" />
-    <link rel="alternate" hreflang="fr" href="./fr/index.html" />
-    <link rel="alternate" hreflang="de" href="./de/index.html" />
-    <link rel="alternate" hreflang="ru" href="./ru/index.html" />
-    <link rel="alternate" hreflang="pt" href="./pt/index.html" />
-    <link rel="alternate" hreflang="it" href="./it/index.html" />
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        
-        .language-selector {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            text-align: center;
-            max-width: 600px;
-            width: 90%;
-        }
-        
-        .logo {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .lang-option {
-            display: block;
-            text-decoration: none;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-        
-        .lang-option:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .lang-flag {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .lang-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .lang-desc {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        .auto-redirect {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 10px;
-            color: #333;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .languages-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 1.5rem;
-            }
-            
-            .language-selector {
-                padding: 30px 20px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="language-selector">
-        <div class="logo">🧮</div>
-        <h1>Percentage Calculator</h1>
-        <p class="subtitle">Choose your language / 选择您的语言 / Elige tu idioma</p>
-        
-        <div class="languages-grid">
-            <a href="./zh/index.html" class="lang-option">
-                <span class="lang-flag">🇨🇳</span>
-                <div class="lang-name">中文</div>
-                <div class="lang-desc">百分比计算器</div>
-            </a>
-            
-            <a href="./en/index.html" class="lang-option">
-                <span class="lang-flag">🇺🇸</span>
-                <div class="lang-name">English</div>
-                <div class="lang-desc">Percentage Calculator</div>
-            </a>
-            
-            <a href="./es/index.html" class="lang-option">
-                <span class="lang-flag">🇪🇸</span>
-                <div class="lang-name">Español</div>
-                <div class="lang-desc">Calculadora de Porcentajes</div>
-            </a>
-            
-            <a href="./ja/index.html" class="lang-option">
-                <span class="lang-flag">🇯🇵</span>
-                <div class="lang-name">日本語</div>
-                <div class="lang-desc">パーセント計算機</div>
-            </a>
-            
-            <a href="./ko/index.html" class="lang-option">
-                <span class="lang-flag">🇰🇷</span>
-                <div class="lang-name">한국어</div>
-                <div class="lang-desc">퍼센트 계산기</div>
-            </a>
-            
-            <a href="./fr/index.html" class="lang-option">
-                <span class="lang-flag">🇫🇷</span>
-                <div class="lang-name">Français</div>
-                <div class="lang-desc">Calculatrice de Pourcentage</div>
-            </a>
+    <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <div class="language-menu">
+                <button class="current-lang">🇺🇸 English</button>
+                <div class="lang-dropdown">
+                    <a href="./zh/index.html">🇨🇳 中文</a>
+                    <a href="./es/index.html">🇪🇸 Español</a>
+                    <a href="./ja/index.html">🇯🇵 日本語</a>
+                    <a href="./ko/index.html">🇰🇷 한국어</a>
+                </div>
+            </div>
         </div>
-        
-        <div class="auto-redirect">
-            <strong>Auto-Redirect:</strong> The page will automatically redirect to your preferred language based on your browser settings in 5 seconds.
-            <br>
-            <strong>自动跳转：</strong>页面将在5秒后根据您的浏览器设置自动跳转到首选语言。
-        </div>
+
+        <header>
+            <h1>Percentage Calculator</h1>
+            <p class="subtitle">Free Online Percentage Calculator - Fast and Accurate Calculations</p>
+        </header>
+
+        <main>
+            <div class="feature-cards">
+                <div class="feature-card" onclick="switchTab('percent-of')">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Calculate Percentage</h3>
+                    <p>What is Y% of X? For example: What is 20% of 100?</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-of')">
+                    <div class="feature-icon">📊</div>
+                    <h3>Proportion Calculator</h3>
+                    <p>What percentage is A of B? For example: What percentage is 50 of 200?</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-change')">
+                    <div class="feature-icon">📈</div>
+                    <h3>Growth Rate Calculator</h3>
+                    <p>Percentage change from A to B? Calculate increase or decrease rates</p>
+                </div>
+            </div>
+
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="percent-of">Calculate Percentage of a Number</button>
+                <button class="tab-btn" data-tab="percentage-of">Calculate Proportion Percentage</button>
+                <button class="tab-btn" data-tab="percentage-change">Calculate Growth Rate</button>
+            </div>
+
+            <div class="calculator-content">
+                <!-- Calculate Percentage of a Number -->
+                <div class="calculator-section active" id="percent-of">
+                    <h2>Calculate what percentage of a number is</h2>
+                    <p class="section-desc">Calculate what is Y% of X, for example: What is 20% of 100?</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="percent-value" placeholder="Enter number" step="any">
+                            <span>×</span>
+                            <input type="number" id="percent-rate" placeholder="Enter percentage" step="any">
+                            <span>% = ?</span>
+                        </div>
+                        <button onclick="calculatePercentOf()">Calculate</button>
+                    </div>
+                    <div class="result" id="percent-of-result">
+                        <div class="result-text">Calculation result will be displayed here</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- Calculate Proportion Percentage -->
+                <div class="calculator-section" id="percentage-of">
+                    <h2>Calculate what percentage one number is of another</h2>
+                    <p class="section-desc">Calculate what percentage A is of B, for example: What percentage is 50 of 200?</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="part-value" placeholder="Enter part value" step="any">
+                            <span>÷</span>
+                            <input type="number" id="total-value" placeholder="Enter total value" step="any">
+                            <span>× 100% = ?</span>
+                        </div>
+                        <button onclick="calculatePercentageOf()">Calculate</button>
+                    </div>
+                    <div class="result" id="percentage-of-result">
+                        <div class="result-text">Calculation result will be displayed here</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- Calculate Growth Rate -->
+                <div class="calculator-section" id="percentage-change">
+                    <h2>Calculate percentage change from one number to another</h2>
+                    <p class="section-desc">Calculate percentage change from A to B, including increases and decreases</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <span>From</span>
+                            <input type="number" id="old-value" placeholder="Original value" step="any">
+                            <span>to</span>
+                            <input type="number" id="new-value" placeholder="New value" step="any">
+                            <span>= ?% change</span>
+                        </div>
+                        <button onclick="calculatePercentageChange()">Calculate</button>
+                    </div>
+                    <div class="result" id="percentage-change-result">
+                        <div class="result-text">Calculation result will be displayed here</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="usage-examples">
+                <h3>Common Use Cases</h3>
+                <div class="examples-grid">
+                    <!-- Shopping & Consumer -->
+                    <div class="example-card">
+                        <h4>Discount Calculation</h4>
+                        <p>Item costs $200, 20% discount: 200 × 20%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Tip Calculation</h4>
+                        <p>Restaurant bill $300, 15% tip: 300 × 15%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Tax Calculation</h4>
+                        <p>Product $200, 13% VAT: 200 × 13%</p>
+                    </div>
+
+                    <!-- Education & Grades -->
+                    <div class="example-card">
+                        <h4>Grade Percentage</h4>
+                        <p>Student scored 85 out of 100: 85 ÷ 100 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Test Score Rate</h4>
+                        <p>Math test: 96 out of 120 points: 96 ÷ 120 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Course Completion</h4>
+                        <p>Completed 18 out of 24 lessons: 18 ÷ 24 × 100%</p>
+                    </div>
+
+                    <!-- Business & Investment -->
+                    <div class="example-card">
+                        <h4>Sales Commission</h4>
+                        <p>Sales $10,000, 8% commission: 10000 × 8%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Investment ROI</h4>
+                        <p>Invested $5,000, profit $750: 750 ÷ 5000 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Performance Growth</h4>
+                        <p>Sales from $500K to $650K: Change from 500 to 650</p>
+                    </div>
+
+                    <!-- Data Analysis -->
+                    <div class="example-card">
+                        <h4>Market Share</h4>
+                        <p>Company product 30% market share: Company sales ÷ Total sales × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>User Growth Rate</h4>
+                        <p>Users from 1,000 to 1,500: Change from 1000 to 1500</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Conversion Rate</h4>
+                        <p>100 visitors, 12 purchases: 12 ÷ 100 × 100%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-explanation">
+                <h3>Percentage Calculation Formulas</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <h4>Calculate Percentage of a Number</h4>
+                        <p><strong>Formula:</strong> Result = Number × Percentage ÷ 100</p>
+                        <p><strong>Example:</strong> 20% of 100 = 100 × 20 ÷ 100 = 20</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>Calculate Proportion Percentage</h4>
+                        <p><strong>Formula:</strong> Percentage = (Part ÷ Total) × 100%</p>
+                        <p><strong>Example:</strong> 50 of 200 = (50 ÷ 200) × 100% = 25%</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>Calculate Percentage Change</h4>
+                        <p><strong>Formula:</strong> Change Rate = ((New - Original) ÷ Original) × 100%</p>
+                        <p><strong>Example:</strong> From 100 to 120 = ((120-100)÷100)×100% = 20%</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Percentage Calculator - Free Online Percentage Calculation Tool</p>
+            <p class="footer-links">
+                <a href="#" onclick="scrollToTop()">Back to Top</a>
+            </p>
+        </footer>
     </div>
 
-    <script>
-        // Auto-redirect based on browser language
-        function detectAndRedirect() {
-            // Get user's preferred language
-            const userLang = navigator.language || navigator.userLanguage;
-            const langCode = userLang.substring(0, 2).toLowerCase();
-            
-            // Define language mappings
-            const languageMap = {
-                'zh': './zh/index.html',
-                'en': './en/index.html', 
-                'es': './es/index.html',
-                'ja': './ja/index.html',
-                'ko': './ko/index.html',
-                'fr': './fr/index.html',
-                'de': './de/index.html',
-                'ru': './ru/index.html',
-                'pt': './pt/index.html',
-                'it': './it/index.html'
-            };
-            
-            // Check if we have a version for this language
-            const redirectUrl = languageMap[langCode];
-            
-            if (redirectUrl) {
-                // Auto-redirect after 5 seconds
-                setTimeout(() => {
-                    window.location.href = redirectUrl;
-                }, 5000);
-            } else {
-                // Default to English if language not supported
-                setTimeout(() => {
-                    window.location.href = './en/index.html';
-                }, 5000);
-            }
-        }
-        
-        // Start auto-redirect
-        detectAndRedirect();
-        
-        // Allow users to click any language option to cancel auto-redirect
-        document.querySelectorAll('.lang-option').forEach(link => {
-            link.addEventListener('click', () => {
-                // Cancel any pending redirects
-                clearTimeout();
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
