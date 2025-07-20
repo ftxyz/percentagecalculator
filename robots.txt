@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://onlinepercenttools.com/sitemap.xml
+
+# Crawl delay for bots
+Crawl-delay: 1
+
+# Block access to non-public directories
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /admin/
+Disallow: /api/
+
+# Allow Googlebot to crawl everything
+User-agent: Googlebot
+Allow: /
+
+# Allow Bingbot to crawl everything
+User-agent: Bingbot
+Allow: /
