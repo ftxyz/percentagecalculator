@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="#2563eb" stroke="#1d4ed8" stroke-width="4"/>
+  
+  <!-- Pie chart segments -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#ffffff" stroke-width="8" stroke-dasharray="43.98 175.93" transform="rotate(-90 100 100)"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#60a5fa" stroke-width="8" stroke-dasharray="131.95 43.98" stroke-dashoffset="43.98" transform="rotate(-90 100 100)"/>
+  
+  <!-- Percentage symbol -->
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold">
+    <text x="100" y="80" text-anchor="middle" font-size="40">%</text>
+    <text x="100" y="120" text-anchor="middle" font-size="16">CALC</text>
+  </g>
+  
+  <!-- Calculator icon overlay -->
+  <g transform="translate(50 50)" opacity="0.2">
+    <rect x="40" y="40" width="20" height="15" fill="#ffffff" rx="2"/>
+    <circle cx="50" cy="47" r="1" fill="#2563eb"/>
+    <circle cx="47" cy="47" r="1" fill="#2563eb"/>
+    <circle cx="53" cy="47" r="1" fill="#2563eb"/>
+  </g>
+</svg>
