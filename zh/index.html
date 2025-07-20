@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线百分比计算器 - 支持计算一个数的百分比、占比计算、增长率计算等多种百分比计算功能。简单易用的在线百分比计算工具。">
+    <meta name="keywords" content="百分比计算器,在线百分比计算器,计算百分比,求百分比,百分比工具,占比计算,增长率计算器,涨幅计算器">
+    <title>百分比计算器 - 在线免费计算百分比、占比、增长率</title>
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="x-default" href="../index.html" />
+    <link rel="alternate" hreflang="en" href="../en/index.html" />
+    <link rel="alternate" hreflang="zh" href="../zh/index.html" />
+    <link rel="alternate" hreflang="es" href="../es/index.html" />
+    <link rel="alternate" hreflang="ja" href="../ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="../ko/index.html" />
+    <link rel="alternate" hreflang="fr" href="../fr/index.html" />
+    <link rel="alternate" hreflang="de" href="../de/index.html" />
+    <link rel="alternate" hreflang="ru" href="../ru/index.html" />
+    <link rel="alternate" hreflang="pt" href="../pt/index.html" />
+    <link rel="alternate" hreflang="it" href="../it/index.html" />
+</head>
+  <body>
+    <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <div class="language-menu">
+                <button class="current-lang">🇨🇳 中文</button>
+                <div class="lang-dropdown">
+                    <a href="../en/index.html">🇺🇸 English</a>
+                    <a href="../es/index.html">🇪🇸 Español</a>
+                    <a href="../ja/index.html">🇯🇵 日本語</a>
+                    <a href="../ko/index.html">🇰🇷 한국어</a>
+                    <a href="../fr/index.html">🇫🇷 Français</a>
+                    <a href="../de/index.html">🇩🇪 Deutsch</a>
+                    <a href="../ru/index.html">🇷🇺 Русский</a>
+                    <a href="../pt/index.html">🇵🇹 Português</a>
+                    <a href="../it/index.html">🇮🇹 Italiano</a>
+                </div>
+            </div>
+        </div>
+
+        <header>
+            <h1>百分比计算器</h1>
+            <p class="subtitle">免费在线百分比计算工具 - 快速准确计算百分比、占比、增长率</p>
+        </header>
+
+        <main>
+            <div class="feature-cards">
+                <div class="feature-card" onclick="switchTab('percent-of')">
+                    <div class="feature-icon">🧮</div>
+                    <h3>计算百分比</h3>
+                    <p>计算X的Y%是多少？例如：100的20%是多少？</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-of')">
+                    <div class="feature-icon">📊</div>
+                    <h3>占比计算</h3>
+                    <p>A占B的百分之几？例如：50占200的百分之几？</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-change')">
+                    <div class="feature-icon">📈</div>
+                    <h3>增长率计算</h3>
+                    <p>从A到B变化了百分之几？计算涨幅或跌幅</p>
+                </div>
+            </div>
+
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="percent-of">计算一个数的百分比</button>
+                <button class="tab-btn" data-tab="percentage-of">计算占比百分比</button>
+                <button class="tab-btn" data-tab="percentage-change">计算增长率</button>
+            </div>
+
+            <div class="calculator-content">
+                <!-- 计算一个数的百分比 -->
+                <div class="calculator-section active" id="percent-of">
+                    <h2>计算一个数的百分比是多少</h2>
+                    <p class="section-desc">计算X的Y%是多少，例如：100的20%是多少？</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="percent-value" placeholder="输入数值" step="any">
+                            <span>的</span>
+                            <input type="number" id="percent-rate" placeholder="输入百分比" step="any">
+                            <span>% 是多少？</span>
+                        </div>
+                        <button onclick="calculatePercentOf()">计算</button>
+                    </div>
+                    <div class="result" id="percent-of-result">
+                        <div class="result-text">计算结果将在这里显示</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- 计算占比百分比 -->
+                <div class="calculator-section" id="percentage-of">
+                    <h2>计算一个数是另一个数的百分之几</h2>
+                    <p class="section-desc">计算A占B的百分之几，例如：50占200的百分之几？</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="part-value" placeholder="输入部分值" step="any">
+                            <span>占</span>
+                            <input type="number" id="total-value" placeholder="输入总值" step="any">
+                            <span>的百分之几？</span>
+                        </div>
+                        <button onclick="calculatePercentageOf()">计算</button>
+                    </div>
+                    <div class="result" id="percentage-of-result">
+                        <div class="result-text">计算结果将在这里显示</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- 计算增长率 -->
+                <div class="calculator-section" id="percentage-change">
+                    <h2>计算从一个数到另一个数的百分比变化</h2>
+                    <p class="section-desc">计算从A到B的百分比变化，包括涨幅和跌幅</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <span>从</span>
+                            <input type="number" id="old-value" placeholder="原始值" step="any">
+                            <span>到</span>
+                            <input type="number" id="new-value" placeholder="新值" step="any">
+                            <span>的百分比变化？</span>
+                        </div>
+                        <button onclick="calculatePercentageChange()">计算</button>
+                    </div>
+                    <div class="result" id="percentage-change-result">
+                        <div class="result-text">计算结果将在这里显示</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="usage-examples">
+                <h3>常见应用场景</h3>
+                <div class="examples-grid">
+                    <!-- 购物与消费 -->
+                    <div class="example-card">
+                        <h4>折扣计算</h4>
+                        <p>原价200元的商品打8折，只需输入：200 的 80%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>小费计算</h4>
+                        <p>餐厅消费300元，给15%小费：300 的 15%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>税费计算</h4>
+                        <p>商品200元，增值税13%：200 的 13%</p>
+                    </div>
+
+                    <!-- 教育与成绩 -->
+                    <div class="example-card">
+                        <h4>成绩百分比</h4>
+                        <p>小明考了85分，满分100分：85 占 100 的百分比</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>考试得分率</h4>
+                        <p>数学考试120分得了96分：96 占 120 的百分比</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>课程完成率</h4>
+                        <p>已完成18课时，总共24课时：18 占 24 的百分比</p>
+                    </div>
+
+                    <!-- 商业与投资 -->
+                    <div class="example-card">
+                        <h4>销售佣金</h4>
+                        <p>销售额10000元，佣金率8%：10000 的 8%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>投资回报率</h4>
+                        <p>投资5000元盈利750元：750 占 5000 的百分比</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>业绩增长率</h4>
+                        <p>销售额从50万增长到65万：从50到65的百分比变化</p>
+                    </div>
+
+                    <!-- 数据分析 -->
+                    <div class="example-card">
+                        <h4>市场份额</h4>
+                        <p>公司产品销量占比30%：公司销量 占 总销量 的百分比</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>用户增长率</h4>
+                        <p>用户从1000增长到1500：从1000到1500的百分比变化</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>转化率分析</h4>
+                        <p>100个访客有12个购买：12 占 100 的百分比</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-explanation">
+                <h3>百分比计算公式</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <h4>计算一个数的百分比</h4>
+                        <p><strong>公式：</strong>结果 = 数值 × 百分比 ÷ 100</p>
+                        <p><strong>示例：</strong>100的20% = 100 × 20 ÷ 100 = 20</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>计算占比百分比</h4>
+                        <p><strong>公式：</strong>百分比 = (部分值 ÷ 总值) × 100%</p>
+                        <p><strong>示例：</strong>50占200的百分比 = (50 ÷ 200) × 100% = 25%</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>计算百分比变化</h4>
+                        <p><strong>公式：</strong>变化率 = ((新值 - 原值) ÷ 原值) × 100%</p>
+                        <p><strong>示例：</strong>从100到120的变化率 = ((120-100)÷100)×100% = 20%</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 百分比计算器 - 免费在线百分比计算工具</p>
+            <p class="footer-links">
+                <a href="#" onclick="scrollToTop()">回到顶部</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

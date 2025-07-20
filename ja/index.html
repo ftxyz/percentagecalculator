@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="無料オンライン パーセント計算機 - パーセンテージ、比率、成長率などを計算します。使いやすいオンラインパーセント計算ツール。">
+    <meta name="keywords" content="パーセント計算機,オンラインパーセント計算機,パーセンテージ計算,パーセントツール,比率計算機,成長率計算機">
+    <title>パーセント計算機 - 無料オンラインパーセンテージ、比率、成長率計算機</title>
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="x-default" href="../index.html" />
+    <link rel="alternate" hreflang="en" href="../en/index.html" />
+    <link rel="alternate" hreflang="zh" href="../zh/index.html" />
+    <link rel="alternate" hreflang="es" href="../es/index.html" />
+    <link rel="alternate" hreflang="ja" href="../ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="../ko/index.html" />
+    <link rel="alternate" hreflang="fr" href="../fr/index.html" />
+    <link rel="alternate" hreflang="de" href="../de/index.html" />
+    <link rel="alternate" hreflang="ru" href="../ru/index.html" />
+    <link rel="alternate" hreflang="pt" href="../pt/index.html" />
+    <link rel="alternate" hreflang="it" href="../it/index.html" />
+</head>
+<body>
+    <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <div class="language-menu">
+                <button class="current-lang">🇯🇵 日本語</button>
+                <div class="lang-dropdown">
+                    <a href="../en/index.html">🇺🇸 English</a>
+                    <a href="../zh/index.html">🇨🇳 中文</a>
+                    <a href="../es/index.html">🇪🇸 Español</a>
+                    <a href="../ko/index.html">🇰🇷 한국어</a>
+                    <a href="../fr/index.html">🇫🇷 Français</a>
+                    <a href="../de/index.html">🇩🇪 Deutsch</a>
+                    <a href="../ru/index.html">🇷🇺 Русский</a>
+                    <a href="../pt/index.html">🇵🇹 Português</a>
+                    <a href="../it/index.html">🇮🇹 Italiano</a>
+                </div>
+            </div>
+        </div>
+
+        <header>
+            <h1>パーセント計算機</h1>
+            <p class="subtitle">無料オンラインパーセント計算機 - 高速で正確な計算</p>
+        </header>
+
+        <main>
+            <div class="feature-cards">
+                <div class="feature-card" onclick="switchTab('percent-of')">
+                    <div class="feature-icon">🧮</div>
+                    <h3>パーセンテージ計算</h3>
+                    <p>XのY%はいくらですか？例：100の20%はいくらですか？</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-of')">
+                    <div class="feature-icon">📊</div>
+                    <h3>比率計算機</h3>
+                    <p>AはBの何パーセントですか？例：50は200の何パーセントですか？</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-change')">
+                    <div class="feature-icon">📈</div>
+                    <h3>成長率計算機</h3>
+                    <p>AからBへのパーセンテージ変化？増加率または減少率を計算</p>
+                </div>
+            </div>
+
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="percent-of">数値のパーセンテージを計算</button>
+                <button class="tab-btn" data-tab="percentage-of">比率パーセンテージを計算</button>
+                <button class="tab-btn" data-tab="percentage-change">成長率を計算</button>
+            </div>
+
+            <div class="calculator-content">
+                <!-- 数値のパーセンテージを計算 -->
+                <div class="calculator-section active" id="percent-of">
+                    <h2>数値のパーセンテージを計算する</h2>
+                    <p class="section-desc">XのY%はいくらかを計算します。例：100の20%はいくらですか？</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="percent-value" placeholder="数値を入力" step="any">
+                            <span>×</span>
+                            <input type="number" id="percent-rate" placeholder="パーセンテージを入力" step="any">
+                            <span>% = ?</span>
+                        </div>
+                        <button onclick="calculatePercentOf()">計算</button>
+                    </div>
+                    <div class="result" id="percent-of-result">
+                        <div class="result-text">計算結果がここに表示されます</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- 比率パーセンテージを計算 -->
+                <div class="calculator-section" id="percentage-of">
+                    <h2>一つの数値が別の数値の何パーセントかを計算する</h2>
+                    <p class="section-desc">AはBの何パーセントかを計算します。例：50は200の何パーセントですか？</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="part-value" placeholder="部分値を入力" step="any">
+                            <span>÷</span>
+                            <input type="number" id="total-value" placeholder="合計値を入力" step="any">
+                            <span>× 100% = ?</span>
+                        </div>
+                        <button onclick="calculatePercentageOf()">計算</button>
+                    </div>
+                    <div class="result" id="percentage-of-result">
+                        <div class="result-text">計算結果がここに表示されます</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- 成長率を計算 -->
+                <div class="calculator-section" id="percentage-change">
+                    <h2>一つの数値から別の数値へのパーセンテージ変化を計算する</h2>
+                    <p class="section-desc">AからBへのパーセンテージ変化を計算します。増加と減少を含みます</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <span>から</span>
+                            <input type="number" id="old-value" placeholder="元の値" step="any">
+                            <span>まで</span>
+                            <input type="number" id="new-value" placeholder="新しい値" step="any">
+                            <span>= ?%変化</span>
+                        </div>
+                        <button onclick="calculatePercentageChange()">計算</button>
+                    </div>
+                    <div class="result" id="percentage-change-result">
+                        <div class="result-text">計算結果がここに表示されます</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="usage-examples">
+                <h3>一般的な使用例</h3>
+                <div class="examples-grid">
+                    <!-- ショッピング & 消費 -->
+                    <div class="example-card">
+                        <h4>割引計算</h4>
+                        <p>商品価格20,000円、20%割引：20000 × 20%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>チップ計算</h4>
+                        <p>レストラン会計30,000円、15%チップ：30000 × 15%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>税金計算</h4>
+                        <p>商品20,000円、消費税10%：20000 × 10%</p>
+                    </div>
+
+                    <!-- 教育 & 成績 -->
+                    <div class="example-card">
+                        <h4>成績の割合</h4>
+                        <p>学生が100点満点中85点：85 ÷ 100 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>テストスコア率</h4>
+                        <p>数学テスト：120点満点中96点：96 ÷ 120 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>コース完了率</h4>
+                        <p>24レッスン中18レッスン完了：18 ÷ 24 × 100%</p>
+                    </div>
+
+                    <!-- ビジネス & 投資 -->
+                    <div class="example-card">
+                        <h4>販売手数料</h4>
+                        <p>売上1,000,000円、手数料8%：1000000 × 8%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>投資収益率</h4>
+                        <p>投資500,000円、利益75,000円：75000 ÷ 500000 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>業績成長</h4>
+                        <p>売上500万円から650万円へ：500から650への変化</p>
+                    </div>
+
+                    <!-- Data Analysis -->
+                    <div class="example-card">
+                        <h4>Market Share</h4>
+                        <p>Company product 30% market share: Company sales ÷ Total sales × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>User Growth Rate</h4>
+                        <p>Users from 1,000 to 1,500: Change from 1000 to 1500</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Conversion Rate</h4>
+                        <p>100 visitors, 12 purchases: 12 ÷ 100 × 100%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-explanation">
+                <h3>Percentage Calculation Formulas</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <h4>Calculate Percentage of a Number</h4>
+                        <p><strong>Formula:</strong> Result = Number × Percentage ÷ 100</p>
+                        <p><strong>Example:</strong> 20% of 100 = 100 × 20 ÷ 100 = 20</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>Calculate Proportion Percentage</h4>
+                        <p><strong>Formula:</strong> Percentage = (Part ÷ Total) × 100%</p>
+                        <p><strong>Example:</strong> 50 of 200 = (50 ÷ 200) × 100% = 25%</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>Calculate Percentage Change</h4>
+                        <p><strong>Formula:</strong> Change Rate = ((New - Original) ÷ Original) × 100%</p>
+                        <p><strong>Example:</strong> From 100 to 120 = ((120-100)÷100)×100% = 20%</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Percentage Calculator - Free Online Percentage Calculation Tool</p>
+            <p class="footer-links">
+                <a href="#" onclick="scrollToTop()">Back to Top</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

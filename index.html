@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Percentage Calculator - Support multiple languages. 免费在线百分比计算器 - 支持多种语言。">
+    <meta name="keywords" content="percentage calculator,百分比计算器,calculadora de porcentajes,パーセント計算機,퍼센트 계산기">
+    <title>Percentage Calculator - 百分比计算器 - Multi-Language Support</title>
+    
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="x-default" href="./index.html" />
+    <link rel="alternate" hreflang="en" href="./en/index.html" />
+    <link rel="alternate" hreflang="zh" href="./zh/index.html" />
+    <link rel="alternate" hreflang="es" href="./es/index.html" />
+    <link rel="alternate" hreflang="ja" href="./ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="./ko/index.html" />
+    <link rel="alternate" hreflang="fr" href="./fr/index.html" />
+    <link rel="alternate" hreflang="de" href="./de/index.html" />
+    <link rel="alternate" hreflang="ru" href="./ru/index.html" />
+    <link rel="alternate" hreflang="pt" href="./pt/index.html" />
+    <link rel="alternate" hreflang="it" href="./it/index.html" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .language-selector {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .lang-option {
+            display: block;
+            text-decoration: none;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .lang-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .lang-flag {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .lang-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .lang-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .auto-redirect {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .language-selector {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <div class="logo">🧮</div>
+        <h1>Percentage Calculator</h1>
+        <p class="subtitle">Choose your language / 选择您的语言 / Elige tu idioma</p>
+        
+        <div class="languages-grid">
+            <a href="./zh/index.html" class="lang-option">
+                <span class="lang-flag">🇨🇳</span>
+                <div class="lang-name">中文</div>
+                <div class="lang-desc">百分比计算器</div>
+            </a>
+            
+            <a href="./en/index.html" class="lang-option">
+                <span class="lang-flag">🇺🇸</span>
+                <div class="lang-name">English</div>
+                <div class="lang-desc">Percentage Calculator</div>
+            </a>
+            
+            <a href="./es/index.html" class="lang-option">
+                <span class="lang-flag">🇪🇸</span>
+                <div class="lang-name">Español</div>
+                <div class="lang-desc">Calculadora de Porcentajes</div>
+            </a>
+            
+            <a href="./ja/index.html" class="lang-option">
+                <span class="lang-flag">🇯🇵</span>
+                <div class="lang-name">日本語</div>
+                <div class="lang-desc">パーセント計算機</div>
+            </a>
+            
+            <a href="./ko/index.html" class="lang-option">
+                <span class="lang-flag">🇰🇷</span>
+                <div class="lang-name">한국어</div>
+                <div class="lang-desc">퍼센트 계산기</div>
+            </a>
+            
+            <a href="./fr/index.html" class="lang-option">
+                <span class="lang-flag">🇫🇷</span>
+                <div class="lang-name">Français</div>
+                <div class="lang-desc">Calculatrice de Pourcentage</div>
+            </a>
+        </div>
+        
+        <div class="auto-redirect">
+            <strong>Auto-Redirect:</strong> The page will automatically redirect to your preferred language based on your browser settings in 5 seconds.
+            <br>
+            <strong>自动跳转：</strong>页面将在5秒后根据您的浏览器设置自动跳转到首选语言。
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect based on browser language
+        function detectAndRedirect() {
+            // Get user's preferred language
+            const userLang = navigator.language || navigator.userLanguage;
+            const langCode = userLang.substring(0, 2).toLowerCase();
+            
+            // Define language mappings
+            const languageMap = {
+                'zh': './zh/index.html',
+                'en': './en/index.html', 
+                'es': './es/index.html',
+                'ja': './ja/index.html',
+                'ko': './ko/index.html',
+                'fr': './fr/index.html',
+                'de': './de/index.html',
+                'ru': './ru/index.html',
+                'pt': './pt/index.html',
+                'it': './it/index.html'
+            };
+            
+            // Check if we have a version for this language
+            const redirectUrl = languageMap[langCode];
+            
+            if (redirectUrl) {
+                // Auto-redirect after 5 seconds
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 5000);
+            } else {
+                // Default to English if language not supported
+                setTimeout(() => {
+                    window.location.href = './en/index.html';
+                }, 5000);
+            }
+        }
+        
+        // Start auto-redirect
+        detectAndRedirect();
+        
+        // Allow users to click any language option to cancel auto-redirect
+        document.querySelectorAll('.lang-option').forEach(link => {
+            link.addEventListener('click', () => {
+                // Cancel any pending redirects
+                clearTimeout();
+            });
+        });
+    </script>
+</body>
+</html>

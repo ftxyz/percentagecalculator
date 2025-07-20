@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Percentage Calculator - Calculate percentages, proportions, growth rates and more. Easy-to-use online percentage calculation tool.">
+    <meta name="keywords" content="percentage calculator,online percentage calculator,calculate percentage,percentage tool,proportion calculator,growth rate calculator">
+    <title>Percentage Calculator - Free Online Percentage, Proportion & Growth Rate Calculator</title>
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="x-default" href="../index.html" />
+    <link rel="alternate" hreflang="en" href="../en/index.html" />
+    <link rel="alternate" hreflang="zh" href="../zh/index.html" />
+    <link rel="alternate" hreflang="es" href="../es/index.html" />
+    <link rel="alternate" hreflang="ja" href="../ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="../ko/index.html" />
+    <link rel="alternate" hreflang="fr" href="../fr/index.html" />
+    <link rel="alternate" hreflang="de" href="../de/index.html" />
+    <link rel="alternate" hreflang="ru" href="../ru/index.html" />
+    <link rel="alternate" hreflang="pt" href="../pt/index.html" />
+    <link rel="alternate" hreflang="it" href="../it/index.html" />
+</head>
+<body>
+    <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <div class="language-menu">
+                <button class="current-lang">🇺🇸 English</button>
+                <div class="lang-dropdown">
+                    <a href="../zh/index.html">🇨🇳 中文</a>
+                    <a href="../es/index.html">🇪🇸 Español</a>
+                    <a href="../ja/index.html">🇯🇵 日本語</a>
+                    <a href="../ko/index.html">🇰🇷 한국어</a>
+                    <a href="../fr/index.html">🇫🇷 Français</a>
+                    <a href="../de/index.html">🇩🇪 Deutsch</a>
+                    <a href="../ru/index.html">🇷🇺 Русский</a>
+                    <a href="../pt/index.html">🇵🇹 Português</a>
+                    <a href="../it/index.html">🇮🇹 Italiano</a>
+                </div>
+            </div>
+        </div>
+
+        <header>
+            <h1>Percentage Calculator</h1>
+            <p class="subtitle">Free Online Percentage Calculator - Fast and Accurate Calculations</p>
+        </header>
+
+        <main>
+            <div class="feature-cards">
+                <div class="feature-card" onclick="switchTab('percent-of')">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Calculate Percentage</h3>
+                    <p>What is Y% of X? For example: What is 20% of 100?</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-of')">
+                    <div class="feature-icon">📊</div>
+                    <h3>Proportion Calculator</h3>
+                    <p>What percentage is A of B? For example: What percentage is 50 of 200?</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-change')">
+                    <div class="feature-icon">📈</div>
+                    <h3>Growth Rate Calculator</h3>
+                    <p>Percentage change from A to B? Calculate increase or decrease rates</p>
+                </div>
+            </div>
+
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="percent-of">Calculate Percentage of a Number</button>
+                <button class="tab-btn" data-tab="percentage-of">Calculate Proportion Percentage</button>
+                <button class="tab-btn" data-tab="percentage-change">Calculate Growth Rate</button>
+            </div>
+
+            <div class="calculator-content">
+                <!-- Calculate Percentage of a Number -->
+                <div class="calculator-section active" id="percent-of">
+                    <h2>Calculate what percentage of a number is</h2>
+                    <p class="section-desc">Calculate what is Y% of X, for example: What is 20% of 100?</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="percent-value" placeholder="Enter number" step="any">
+                            <span>×</span>
+                            <input type="number" id="percent-rate" placeholder="Enter percentage" step="any">
+                            <span>% = ?</span>
+                        </div>
+                        <button onclick="calculatePercentOf()">Calculate</button>
+                    </div>
+                    <div class="result" id="percent-of-result">
+                        <div class="result-text">Calculation result will be displayed here</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- Calculate Proportion Percentage -->
+                <div class="calculator-section" id="percentage-of">
+                    <h2>Calculate what percentage one number is of another</h2>
+                    <p class="section-desc">Calculate what percentage A is of B, for example: What percentage is 50 of 200?</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="part-value" placeholder="Enter part value" step="any">
+                            <span>÷</span>
+                            <input type="number" id="total-value" placeholder="Enter total value" step="any">
+                            <span>× 100% = ?</span>
+                        </div>
+                        <button onclick="calculatePercentageOf()">Calculate</button>
+                    </div>
+                    <div class="result" id="percentage-of-result">
+                        <div class="result-text">Calculation result will be displayed here</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- Calculate Growth Rate -->
+                <div class="calculator-section" id="percentage-change">
+                    <h2>Calculate percentage change from one number to another</h2>
+                    <p class="section-desc">Calculate percentage change from A to B, including increases and decreases</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <span>From</span>
+                            <input type="number" id="old-value" placeholder="Original value" step="any">
+                            <span>to</span>
+                            <input type="number" id="new-value" placeholder="New value" step="any">
+                            <span>= ?% change</span>
+                        </div>
+                        <button onclick="calculatePercentageChange()">Calculate</button>
+                    </div>
+                    <div class="result" id="percentage-change-result">
+                        <div class="result-text">Calculation result will be displayed here</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="usage-examples">
+                <h3>Common Use Cases</h3>
+                <div class="examples-grid">
+                    <!-- Shopping & Consumer -->
+                    <div class="example-card">
+                        <h4>Discount Calculation</h4>
+                        <p>Item costs $200, 20% discount: 200 × 20%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Tip Calculation</h4>
+                        <p>Restaurant bill $300, 15% tip: 300 × 15%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Tax Calculation</h4>
+                        <p>Product $200, 13% VAT: 200 × 13%</p>
+                    </div>
+
+                    <!-- Education & Grades -->
+                    <div class="example-card">
+                        <h4>Grade Percentage</h4>
+                        <p>Student scored 85 out of 100: 85 ÷ 100 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Test Score Rate</h4>
+                        <p>Math test: 96 out of 120 points: 96 ÷ 120 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Course Completion</h4>
+                        <p>Completed 18 out of 24 lessons: 18 ÷ 24 × 100%</p>
+                    </div>
+
+                    <!-- Business & Investment -->
+                    <div class="example-card">
+                        <h4>Sales Commission</h4>
+                        <p>Sales $10,000, 8% commission: 10000 × 8%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Investment ROI</h4>
+                        <p>Invested $5,000, profit $750: 750 ÷ 5000 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Performance Growth</h4>
+                        <p>Sales from $500K to $650K: Change from 500 to 650</p>
+                    </div>
+
+                    <!-- Data Analysis -->
+                    <div class="example-card">
+                        <h4>Market Share</h4>
+                        <p>Company product 30% market share: Company sales ÷ Total sales × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>User Growth Rate</h4>
+                        <p>Users from 1,000 to 1,500: Change from 1000 to 1500</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Conversion Rate</h4>
+                        <p>100 visitors, 12 purchases: 12 ÷ 100 × 100%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-explanation">
+                <h3>Percentage Calculation Formulas</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <h4>Calculate Percentage of a Number</h4>
+                        <p><strong>Formula:</strong> Result = Number × Percentage ÷ 100</p>
+                        <p><strong>Example:</strong> 20% of 100 = 100 × 20 ÷ 100 = 20</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>Calculate Proportion Percentage</h4>
+                        <p><strong>Formula:</strong> Percentage = (Part ÷ Total) × 100%</p>
+                        <p><strong>Example:</strong> 50 of 200 = (50 ÷ 200) × 100% = 25%</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>Calculate Percentage Change</h4>
+                        <p><strong>Formula:</strong> Change Rate = ((New - Original) ÷ Original) × 100%</p>
+                        <p><strong>Example:</strong> From 100 to 120 = ((120-100)÷100)×100% = 20%</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Percentage Calculator - Free Online Percentage Calculation Tool</p>
+            <p class="footer-links">
+                <a href="#" onclick="scrollToTop()">Back to Top</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

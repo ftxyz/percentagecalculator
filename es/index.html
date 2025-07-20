@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de Porcentajes Gratuita en Línea - Calcula porcentajes, proporciones, tasas de crecimiento y más. Herramienta fácil de usar para cálculos de porcentajes.">
+    <meta name="keywords" content="calculadora de porcentajes,calculadora de porcentajes en línea,calcular porcentaje,herramienta de porcentajes,calculadora de proporciones,calculadora de tasa de crecimiento">
+    <title>Calculadora de Porcentajes - Calculadora Gratuita de Porcentajes, Proporciones y Tasas de Crecimiento</title>
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="x-default" href="../index.html" />
+    <link rel="alternate" hreflang="en" href="../en/index.html" />
+    <link rel="alternate" hreflang="zh" href="../zh/index.html" />
+    <link rel="alternate" hreflang="es" href="../es/index.html" />
+    <link rel="alternate" hreflang="ja" href="../ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="../ko/index.html" />
+    <link rel="alternate" hreflang="fr" href="../fr/index.html" />
+    <link rel="alternate" hreflang="de" href="../de/index.html" />
+    <link rel="alternate" hreflang="ru" href="../ru/index.html" />
+    <link rel="alternate" hreflang="pt" href="../pt/index.html" />
+    <link rel="alternate" hreflang="it" href="../it/index.html" />
+</head>
+<body>
+    <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <div class="language-menu">
+                <button class="current-lang">🇪🇸 Español</button>
+                <div class="lang-dropdown">
+                    <a href="../en/index.html">🇺🇸 English</a>
+                    <a href="../zh/index.html">🇨🇳 中文</a>
+                    <a href="../ja/index.html">🇯🇵 日本語</a>
+                    <a href="../ko/index.html">🇰🇷 한국어</a>
+                    <a href="../fr/index.html">🇫🇷 Français</a>
+                    <a href="../de/index.html">🇩🇪 Deutsch</a>
+                    <a href="../ru/index.html">🇷🇺 Русский</a>
+                    <a href="../pt/index.html">🇵🇹 Português</a>
+                    <a href="../it/index.html">🇮🇹 Italiano</a>
+                </div>
+            </div>
+        </div>
+
+        <header>
+            <h1>Calculadora de Porcentajes</h1>
+            <p class="subtitle">Calculadora de Porcentajes Gratuita en Línea - Cálculos Rápidos y Precisos</p>
+        </header>
+
+        <main>
+            <div class="feature-cards">
+                <div class="feature-card" onclick="switchTab('percent-of')">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Calcular Porcentaje</h3>
+                    <p>¿Cuánto es el Y% de X? Por ejemplo: ¿Cuánto es el 20% de 100?</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-of')">
+                    <div class="feature-icon">📊</div>
+                    <h3>Calculadora de Proporción</h3>
+                    <p>¿Qué porcentaje es A de B? Por ejemplo: ¿Qué porcentaje es 50 de 200?</p>
+                </div>
+                <div class="feature-card" onclick="switchTab('percentage-change')">
+                    <div class="feature-icon">📈</div>
+                    <h3>Calculadora de Tasa de Crecimiento</h3>
+                    <p>¿Cambio porcentual de A a B? Calcular tasas de aumento o disminución</p>
+                </div>
+            </div>
+
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="percent-of">Calcular Porcentaje de un Número</button>
+                <button class="tab-btn" data-tab="percentage-of">Calcular Porcentaje de Proporción</button>
+                <button class="tab-btn" data-tab="percentage-change">Calcular Tasa de Crecimiento</button>
+            </div>
+
+            <div class="calculator-content">
+                <!-- Calcular Porcentaje de un Número -->
+                <div class="calculator-section active" id="percent-of">
+                    <h2>Calcular qué porcentaje de un número es</h2>
+                    <p class="section-desc">Calcular cuánto es Y% de X, por ejemplo: ¿Cuánto es el 20% de 100?</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="percent-value" placeholder="Ingrese número" step="any">
+                            <span>×</span>
+                            <input type="number" id="percent-rate" placeholder="Ingrese porcentaje" step="any">
+                            <span>% = ?</span>
+                        </div>
+                        <button onclick="calculatePercentOf()">Calcular</button>
+                    </div>
+                    <div class="result" id="percent-of-result">
+                        <div class="result-text">El resultado del cálculo se mostrará aquí</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- Calcular Porcentaje de Proporción -->
+                <div class="calculator-section" id="percentage-of">
+                    <h2>Calcular qué porcentaje es un número de otro</h2>
+                    <p class="section-desc">Calcular qué porcentaje es A de B, por ejemplo: ¿Qué porcentaje es 50 de 200?</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <input type="number" id="part-value" placeholder="Ingrese valor parcial" step="any">
+                            <span>÷</span>
+                            <input type="number" id="total-value" placeholder="Ingrese valor total" step="any">
+                            <span>× 100% = ?</span>
+                        </div>
+                        <button onclick="calculatePercentageOf()">Calcular</button>
+                    </div>
+                    <div class="result" id="percentage-of-result">
+                        <div class="result-text">El resultado del cálculo se mostrará aquí</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+
+                <!-- Calcular Tasa de Crecimiento -->
+                <div class="calculator-section" id="percentage-change">
+                    <h2>Calcular el cambio porcentual de un número a otro</h2>
+                    <p class="section-desc">Calcular el cambio porcentual de A a B, incluyendo aumentos y disminuciones</p>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <span>De</span>
+                            <input type="number" id="old-value" placeholder="Valor original" step="any">
+                            <span>a</span>
+                            <input type="number" id="new-value" placeholder="Valor nuevo" step="any">
+                            <span>= ?% cambio</span>
+                        </div>
+                        <button onclick="calculatePercentageChange()">Calcular</button>
+                    </div>
+                    <div class="result" id="percentage-change-result">
+                        <div class="result-text">El resultado del cálculo se mostrará aquí</div>
+                        <div class="result-formula"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="usage-examples">
+                <h3>Casos de Uso Comunes</h3>
+                <div class="examples-grid">
+                    <!-- Compras y Consumo -->
+                    <div class="example-card">
+                        <h4>Cálculo de Descuento</h4>
+                        <p>Artículo cuesta $200, descuento del 20%: 200 × 20%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Cálculo de Propina</h4>
+                        <p>Cuenta del restaurante $300, propina del 15%: 300 × 15%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Cálculo de Impuestos</h4>
+                        <p>Producto $200, IVA del 13%: 200 × 13%</p>
+                    </div>
+
+                    <!-- Educación y Calificaciones -->
+                    <div class="example-card">
+                        <h4>Porcentaje de Calificación</h4>
+                        <p>Estudiante obtuvo 85 de 100: 85 ÷ 100 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Tasa de Puntuación de Examen</h4>
+                        <p>Examen de matemáticas: 96 de 120 puntos: 96 ÷ 120 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Finalización del Curso</h4>
+                        <p>Completó 18 de 24 lecciones: 18 ÷ 24 × 100%</p>
+                    </div>
+
+                    <!-- Negocios e Inversión -->
+                    <div class="example-card">
+                        <h4>Comisión de Ventas</h4>
+                        <p>Ventas $10,000, comisión del 8%: 10000 × 8%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>ROI de Inversión</h4>
+                        <p>Invirtió $5,000, ganancia $750: 750 ÷ 5000 × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Crecimiento del Rendimiento</h4>
+                        <p>Ventas de $500K a $650K: Cambio de 500 a 650</p>
+                    </div>
+
+                    <!-- Análisis de Datos -->
+                    <div class="example-card">
+                        <h4>Cuota de Mercado</h4>
+                        <p>Producto de la empresa 30% cuota de mercado: Ventas de la empresa ÷ Ventas totales × 100%</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Tasa de Crecimiento de Usuarios</h4>
+                        <p>Usuarios de 1,000 a 1,500: Cambio de 1000 a 1500</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Tasa de Conversión</h4>
+                        <p>100 visitantes, 12 compras: 12 ÷ 100 × 100%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-explanation">
+                <h3>Fórmulas de Cálculo de Porcentajes</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <h4>Calcular Porcentaje de un Número</h4>
+                        <p><strong>Fórmula:</strong> Resultado = Número × Porcentaje ÷ 100</p>
+                        <p><strong>Ejemplo:</strong> 20% de 100 = 100 × 20 ÷ 100 = 20</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>Calcular Porcentaje de Proporción</h4>
+                        <p><strong>Fórmula:</strong> Porcentaje = (Parte ÷ Total) × 100%</p>
+                        <p><strong>Ejemplo:</strong> 50 de 200 = (50 ÷ 200) × 100% = 25%</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>Calcular Cambio Porcentual</h4>
+                        <p><strong>Fórmula:</strong> Tasa de Cambio = ((Nuevo - Original) ÷ Original) × 100%</p>
+                        <p><strong>Ejemplo:</strong> De 100 a 120 = ((120-100)÷100)×100% = 20%</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Calculadora de Porcentajes - Herramienta Gratuita de Cálculo de Porcentajes en Línea</p>
+            <p class="footer-links">
+                <a href="#" onclick="scrollToTop()">Volver Arriba</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
